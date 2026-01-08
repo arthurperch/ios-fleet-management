@@ -2,7 +2,7 @@
 
 > Enterprise Mobile Device Management using Jamf Now MDM
 
-[![iOS](https://img.shields.io/badge/iOS-16%2F17-blue.svg)](https://developer.apple.com/ios/)
+[![iOS](https://img.shields.io/badge/iOS-18.1-blue.svg)](https://developer.apple.com/ios/)
 [![Jamf](https://img.shields.io/badge/Jamf%20Now-MDM-orange.svg)](https://www.jamf.com/products/jamf-now/)
 [![MDM](https://img.shields.io/badge/MDM-Enterprise-green.svg)](https://support.apple.com/guide/mdm/)
 [![Mobile Security](https://img.shields.io/badge/Security-Mobile%20Fleet-red.svg)](https://support.apple.com/business/device-management/)
@@ -27,9 +27,9 @@ The lab environment consists of a cloud-based management infrastructure using Ja
 
 | Device Name | Model | iOS Version | Profile Type | Purpose |
 |------------|-------|-------------|--------------|---------|
-| EXEC-iPhone-01 | iPhone 14 Pro | iOS 17.2 | Executive | High security testing |
-| SALES-iPhone-02 | iPhone 13 | iOS 16.7 | Sales Rep | Standard user profile |
-| TECH-iPhone-03 | iPhone 14 | iOS 17.1 | Field Tech | Basic access testing |
+| EXEC-iPhone-01 | iPhone 13 | iOS 18.1 | Executive | High security testing |
+| SALES-iPhone-02 | iPhone 13 | iOS 18.1 | Sales Rep | Standard user profile |
+| TECH-iPhone-03 | iPhone 13 | iOS 18.1 | Field Tech | Basic access testing |
 
 ## Configuration Profiles
 
@@ -79,41 +79,88 @@ The lab environment consists of a cloud-based management infrastructure using Ja
 ![Enrollment Process](screenshots/enrollment-process.png)
 *Device enrollment workflow and management interface*
 
-### Step-by-Step Device Enrollment Process
+---
 
-**Administrator Side (Jamf Now Web Portal):**
+## 📋 Step-by-Step Device Enrollment Process
 
-1. **Access Jamf Now Portal**: Log into your Jamf Now account at the web portal
-2. **Navigate to Devices**: Click on "Devices" in the left sidebar navigation menu
-3. **Create Enrollment**: Select "Enroll Device" option to create a new device enrollment
-4. **Download Configuration**: Generate and download the configuration profile file (.mobileconfig)
+> **📱 Follow these steps while referencing the enrollment workflow screenshot above**
 
-**Device Delivery Method:**
+### 🔧 Administrator Side (Jamf Now Web Portal)
 
-5. **Send to Device**: For lab purposes, email the .mobileconfig file directly to the target iPhone
-   - *Note: In production environments, consider using more secure delivery methods*
+> **Step 1-4: Portal Configuration**
 
-**User Side (iPhone Device):**
+**1. Access Jamf Now Portal** 
+- Log into your Jamf Now account at the web portal
 
-6. **Open Email**: On the target iPhone, open the email containing the configuration file
-7. **Install Profile**: Tap on the .mobileconfig attachment - it should automatically prompt for installation
-8. **Navigate to Settings**: Go to iPhone Settings → General → VPN & Device Management
-9. **Select Profile**: Under "Downloaded Profile" section, tap on "Mobile Device Management"
-10. **Install Configuration**: 
-    - Tap "Install" button
-    - Enter device passcode if prompted
-    - Tap "Install" again to confirm
-11. **Establish Trust**: Tap "Trust" to establish the management relationship
-12. **Complete Installation**: The profile will install and enable remote management capabilities
+**2. Navigate to Devices** 
+- Click on **"Devices"** in the left sidebar navigation menu
 
-**Verification Steps:**
+**3. Create Enrollment** 
+- Select **"Enroll Device"** option to create a new device enrollment
 
-13. **Return to Portal**: Go back to the Jamf Now web portal
-14. **Refresh Device List**: Navigate to the Devices page and refresh the browser
-15. **Confirm Connection**: The newly enrolled device should now appear in the device inventory
-16. **Verify Management**: Administrator can now remotely manage, configure, and monitor the device
+**4. Download Configuration** 
+- Generate and download the configuration profile file (**.mobileconfig**)
 
-*Upon successful installation and trust establishment, this configuration file enables comprehensive remote administration permissions for the IT administrator.*
+---
+
+### 📧 Device Delivery Method
+
+> **Step 5: File Transfer**
+
+**5. Send to Device** 
+- For lab purposes, email the **.mobileconfig** file directly to the target iPhone 13
+- ⚠️ *Note: In production environments, consider using more secure delivery methods*
+
+---
+
+### 📱 User Side (iPhone 13 - iOS 18.1)
+
+> **Step 6-12: Device Configuration**
+
+**6. Open Email** 
+- On the target iPhone 13, open the email containing the configuration file
+
+**7. Install Profile** 
+- Tap on the **.mobileconfig** attachment - it should automatically prompt for installation
+
+**8. Navigate to Settings** 
+- Go to **iPhone Settings** → **General** → **VPN & Device Management**
+
+**9. Select Profile** 
+- Under **"Downloaded Profile"** section, tap on **"Mobile Device Management"**
+
+**10. Install Configuration** 
+- Tap **"Install"** button
+- Enter device passcode if prompted
+- Tap **"Install"** again to confirm
+
+**11. Establish Trust** 
+- Tap **"Trust"** to establish the management relationship
+
+**12. Complete Installation** 
+- The profile will install and enable remote management capabilities
+
+---
+
+### ✅ Verification Steps
+
+> **Step 13-16: Confirm Success**
+
+**13. Return to Portal** 
+- Go back to the Jamf Now web portal
+
+**14. Refresh Device List** 
+- Navigate to the **Devices** page and refresh the browser
+
+**15. Confirm Connection** 
+- The newly enrolled iPhone 13 should now appear in the device inventory
+
+**16. Verify Management** 
+- Administrator can now remotely manage, configure, and monitor the device
+
+---
+
+> **🔐 Upon successful installation and trust establishment, this configuration file enables comprehensive remote administration permissions for the IT administrator.**
 
 ## Troubleshooting
 
@@ -160,7 +207,7 @@ This lab directly demonstrates skills required for enterprise iOS support scenar
 ## Technologies Used
 
 - **Jamf Now**: Cloud-based MDM platform for iOS/macOS management and policy enforcement
-- **iOS 16/17**: Apple mobile operating system with enterprise management features
+- **iOS 18.1**: Apple mobile operating system with enterprise management features
 - **Apple Configurator**: Device enrollment and profile management utility
 - **MDM Protocol**: Apple's native mobile device management framework for enterprise control
 
