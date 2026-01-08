@@ -76,8 +76,44 @@ The lab environment consists of a cloud-based management infrastructure using Ja
 6. **App Distribution** - Deployed enterprise applications and verified installation across targeted device groups
 7. **Compliance Monitoring** - Tracked device compliance status and generated reports for security auditing
 
-![Testing Scenarios](screenshots/testing-scenarios.png)
-*[INSERT: Screenshots showing each scenario]*
+![Enrollment Process](screenshots/enrollment-process.png)
+*Device enrollment workflow and management interface*
+
+### Step-by-Step Device Enrollment Process
+
+**Administrator Side (Jamf Now Web Portal):**
+
+1. **Access Jamf Now Portal**: Log into your Jamf Now account at the web portal
+2. **Navigate to Devices**: Click on "Devices" in the left sidebar navigation menu
+3. **Create Enrollment**: Select "Enroll Device" option to create a new device enrollment
+4. **Download Configuration**: Generate and download the configuration profile file (.mobileconfig)
+
+**Device Delivery Method:**
+
+5. **Send to Device**: For lab purposes, email the .mobileconfig file directly to the target iPhone
+   - *Note: In production environments, consider using more secure delivery methods*
+
+**User Side (iPhone Device):**
+
+6. **Open Email**: On the target iPhone, open the email containing the configuration file
+7. **Install Profile**: Tap on the .mobileconfig attachment - it should automatically prompt for installation
+8. **Navigate to Settings**: Go to iPhone Settings → General → VPN & Device Management
+9. **Select Profile**: Under "Downloaded Profile" section, tap on "Mobile Device Management"
+10. **Install Configuration**: 
+    - Tap "Install" button
+    - Enter device passcode if prompted
+    - Tap "Install" again to confirm
+11. **Establish Trust**: Tap "Trust" to establish the management relationship
+12. **Complete Installation**: The profile will install and enable remote management capabilities
+
+**Verification Steps:**
+
+13. **Return to Portal**: Go back to the Jamf Now web portal
+14. **Refresh Device List**: Navigate to the Devices page and refresh the browser
+15. **Confirm Connection**: The newly enrolled device should now appear in the device inventory
+16. **Verify Management**: Administrator can now remotely manage, configure, and monitor the device
+
+*Upon successful installation and trust establishment, this configuration file enables comprehensive remote administration permissions for the IT administrator.*
 
 ## Troubleshooting
 
