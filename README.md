@@ -18,7 +18,7 @@ This lab demonstrates comprehensive iOS Mobile Device Management (MDM) configura
 The lab environment consists of a cloud-based management infrastructure using Jamf Now MDM platform to centrally control and monitor a fleet of iOS devices. The setup includes three physical iPhone devices configured with distinct security profiles representing different enterprise user roles: Executive (high security), Sales (moderate security), and Field Tech (basic security). Each device demonstrates specific use cases and security requirements commonly encountered in corporate environments, including passcode policies, application restrictions, network configurations, and remote management capabilities.
 
 <p align="center">
-  <img src="screenshots/lab-architecture.png" width="400" />
+  <img src="screenshots/lab-architecture.png" width="750" />
 </p>
 
 
